@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Forge of Hephaestus</title>
   
-  <!-- Favicon and Social Meta Tags[cite: 1] -->
+  <!-- Favicon & Social Media Meta Tags -->
   <link rel="icon" type="image/jpeg" href="/static/logo.jpg" />
   <meta property="og:title" content="The Forge of Hephaestus — Mythic Reversi">
   <meta property="og:description" content="A strategic twist on Othello featuring volatile crucibles, dual-scoring anvils, and a custom Minimax AI. Play free online!">
@@ -17,33 +17,41 @@
   <meta name="twitter:description" content="Play the mythological strategy web game!">
   <meta name="twitter:image" content="https://forgeofhephaestus.jmmn.tech/static/logo.jpg">
 
+  <!-- External Fonts & Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
+  <!-- Main Application Wrapper -->
   <div class="app">
-    <!-- Header -->
+    
+    <!-- Header Section -->
     <header class="header">
       <h1 class="title">⚒️ The Forge of Hephaestus</h1>
       <p class="subtitle">A Mythological Strategy Game &nbsp;·&nbsp; Created by Mohammad Khairul Haque & Fahima Mehzabeen</p>
     </header>
 
+    <!-- Main Content Layout -->
     <div class="body">
-      <!-- Board Area -->
+      
+      <!-- Left Column: Game Board Area -->
       <section class="board-area">
+        <!-- Dynamic Board Grid Rendering -->
         <div class="col-labels" id="col-labels"></div>
         <div class="board-wrap">
           <div class="row-labels" id="row-labels"></div>
           <div class="board" id="board"></div>
         </div>
+        <!-- Status Indicator -->
         <div class="status-bar" id="status">Loading…</div>
       </section>
 
-      <!-- Sidebar -->
+      <!-- Right Column: Sidebar / Game UI Panel -->
       <aside class="sidebar">
-        <!-- Scoreboard -->
+        
+        <!-- Player Scores -->
         <div class="panel">
           <div class="panel-title">Scoreboard</div>
           <div class="panel-sep"></div>
@@ -59,7 +67,7 @@
           </div>
         </div>
 
-        <!-- Current Turn -->
+        <!-- Turn Indicator -->
         <div class="panel">
           <div class="panel-title">Current Turn</div>
           <div class="panel-sep"></div>
@@ -69,7 +77,7 @@
           </div>
         </div>
 
-        <!-- Board Legend -->
+        <!-- Board Mechanics Legend -->
         <div class="panel">
           <div class="panel-title">Board Legend</div>
           <div class="panel-sep"></div>
@@ -87,21 +95,21 @@
           </div>
         </div>
 
-        <!-- AI Stats -->
+        <!-- AI Performance Metrics -->
         <div class="panel">
           <div class="panel-title">AI Engine Stats</div>
           <div class="panel-sep"></div>
           <div class="stats-text" id="ai-stats">Nodes: 0 &nbsp;|&nbsp; Pruned: 0 &nbsp;|&nbsp; Time: 0.00s</div>
         </div>
 
-        <!-- Move History -->
+        <!-- Gameplay Log / History -->
         <div class="panel panel-log">
           <div class="panel-title">Move History</div>
           <div class="panel-sep"></div>
           <div class="log" id="log"></div>
         </div>
 
-        <!-- Controls -->
+        <!-- Game Controls & AI Difficulty -->
         <button class="btn-new" id="btn-new">New Game</button>
         <div class="depth-row">
           <label class="depth-label" for="depth-input">AI Depth:</label>
@@ -111,7 +119,7 @@
     </div>
   </div>
 
-  <!-- Game Over Modal -->
+  <!-- End of Game Modal (Hidden by Default) -->
   <div class="modal-overlay" id="modal" style="display:none">
     <div class="modal">
       <div class="modal-icon" id="modal-icon">🏆</div>
@@ -121,6 +129,7 @@
     </div>
   </div>
 
+  <!-- Game Logic Script -->
   <script src="/static/game.js"></script>
 </body>
 </html>
