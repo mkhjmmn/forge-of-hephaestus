@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Forge of Hephaestus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">⚒️ The Forge of Hephaestus</h1>
+      <p class="subtitle">A Mythological Strategy Game &nbsp;·&nbsp; Minimax + Alpha-Beta AI</p>
+    </header>
+
+    <div class="body">
+      <!-- Board Area -->
+      <section class="board-area">
+        <div class="col-labels" id="col-labels"></div>
+        <div class="board-wrap">
+          <div class="row-labels" id="row-labels"></div>
+          <div class="board" id="board"></div>
+        </div>
+        <div class="status-bar" id="status">Loading…</div>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Scoreboard -->
+        <div class="panel">
+          <div class="panel-title">Scoreboard</div>
+          <div class="panel-sep"></div>
+          <div class="score-row">
+            <span class="score-icon">🔥</span>
+            <span class="score-name player-color">Hephaestus</span>
+            <span class="score-value player-color" id="player-score">4</span>
+          </div>
+          <div class="score-row">
+            <span class="score-icon">🌊</span>
+            <span class="score-name ai-color">Poseidon's Champion</span>
+            <span class="score-value ai-color" id="ai-score">2</span>
+          </div>
+        </div>
+
+        <!-- Current Turn -->
+        <div class="panel">
+          <div class="panel-title">Current Turn</div>
+          <div class="panel-sep"></div>
+          <div class="turn-row">
+            <span class="turn-dot" id="turn-dot"></span>
+            <span class="turn-name" id="turn-name">Hephaestus (Player)</span>
+          </div>
+        </div>
+
+        <!-- Board Legend -->
+        <div class="panel">
+          <div class="panel-title">Board Legend</div>
+          <div class="panel-sep"></div>
+          <div class="legend-item">
+            <span class="legend-swatch" style="background:#2a2a2a;border-color:#5c3a1e"></span>
+            <span class="legend-text">🏛️ Anvil — Unflippable, counts ×2</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch" style="background:#4a1a1a;border-color:#8a2a2a"></span>
+            <span class="legend-text">💥 Crucible — Explodes on placement</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch" style="background:#4a5a35;border-color:#6a8a45"></span>
+            <span class="legend-text">● Legal move — Valid placement</span>
+          </div>
+        </div>
+
+        <!-- AI Stats -->
+        <div class="panel">
+          <div class="panel-title">AI Engine Stats</div>
+          <div class="panel-sep"></div>
+          <div class="stats-text" id="ai-stats">Nodes: 0 &nbsp;|&nbsp; Pruned: 0 &nbsp;|&nbsp; Time: 0.00s</div>
+        </div>
+
+        <!-- Move History -->
+        <div class="panel panel-log">
+          <div class="panel-title">Move History</div>
+          <div class="panel-sep"></div>
+          <div class="log" id="log"></div>
+        </div>
+
+        <!-- Controls -->
+        <button class="btn-new" id="btn-new">New Game</button>
+        <div class="depth-row">
+          <label class="depth-label" for="depth-input">AI Depth:</label>
+          <input class="depth-input" id="depth-input" type="number" min="1" max="8" value="5" />
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div class="modal-overlay" id="modal" style="display:none">
+    <div class="modal">
+      <div class="modal-icon" id="modal-icon">🏆</div>
+      <div class="modal-title" id="modal-title">Game Over</div>
+      <div class="modal-msg" id="modal-msg"></div>
+      <button class="btn-new modal-btn" id="modal-new">Play Again</button>
+    </div>
+  </div>
+
+  <script src="/static/game.js"></script>
+</body>
+</html>
