@@ -1,7 +1,7 @@
 [project]
-name = "repl-nix-workspace"
+name = "theforgehephaestus"
 version = "0.1.0"
-description = "Add your description here"
+description = "A lightweight Flask backend service for The Forge of Hephaestus."
 requires-python = ">=3.13"
 dependencies = [
     "flask>=3.1.3",
